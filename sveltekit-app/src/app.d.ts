@@ -10,4 +10,8 @@ declare global {
     }
 }
 
+interface Env {
+	MY_DO: DurableObjectNamespace;
+}
+
 export {};
