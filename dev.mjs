@@ -21,12 +21,10 @@ const wranglerDevProcess = fork(
 });
 
 wranglerDevProcess.on("SIGINT", () => {
-  console.log("SIGINT, byebye");
   wranglerDevProcess.exit();
 });
 
 wranglerDevProcess.on("SIGTERM", () => {
-  console.log("SIGTERM, byebye");
   wranglerDevProcess.exit();
 });
 
