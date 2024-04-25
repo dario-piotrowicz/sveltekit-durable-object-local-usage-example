@@ -10,7 +10,7 @@ const wranglerDevPromise = new Promise((r) => (wranglerDevResolve = r));
 
 const wranglerDevProcess = fork(
   join(__dirname, "node_modules", "wrangler", "bin", "wrangler.js"),
-  ["dev"],
+  ["dev", "--persist-to", "../.wrangler"],
   {
     cwd: resolve(__dirname, "do-worker"),
     env: { BROWSER: "none", ...process.env },
