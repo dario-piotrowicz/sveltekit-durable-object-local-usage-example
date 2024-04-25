@@ -14,7 +14,7 @@ const wranglerDevProcess = fork(
   {
     cwd: resolve(__dirname, "do-worker"),
     env: { BROWSER: "none", ...process.env },
-    stdio: ["ignore", "ignore", "ignore", "ipc"],
+    stdio: ["ignore", process.stdout, process.stderr, "ipc"],
   }
 ).on("message", () => {
   wranglerDevResolve();
