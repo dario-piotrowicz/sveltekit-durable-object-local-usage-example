@@ -1,6 +1,10 @@
 name = "sveltekit-app"
-compatibility_date = "2024-02-23"
+compatibility_date = "2024-04-05"
 
+
+kv_namespaces = [
+  { binding = "EXAMPLE_KV", id = "a-shared-id" }
+]
 
 [[durable_objects.bindings]]
 name = "MY_DO"
