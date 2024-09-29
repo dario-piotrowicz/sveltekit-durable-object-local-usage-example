@@ -12,6 +12,7 @@ declare global {
 
 interface Env {
 	MY_DO: DurableObjectNamespace;
+    EXAMPLE_KV: KVNamespace;
 }
 
 export {};

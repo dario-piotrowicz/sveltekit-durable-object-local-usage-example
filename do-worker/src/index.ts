@@ -1,5 +1,6 @@
 export interface Env {
 	MY_DO: DurableObjectNamespace;
+	EXAMPLE_KV: KVNamespace;
 }
 
 export default {
@@ -17,9 +18,14 @@ export default {
 };
 
 export class DurableObjectClass {
-	constructor() {}
+	env;
+	constructor(public state: DurableObjectState, env: Env) {
+		this.state = state;
+		this.env = env;
+	}
 
 	async fetch() {
+		this.env.EXAMPLE_KV.put("my_key", "Hello back to you");
 	  return new Response("Hello from DurableObject!");
 	}
 }
